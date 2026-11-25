@@ -4,12 +4,14 @@
 def is_leap_year(year: int) -> bool:
     if year < 0 or type(year) != int:
         raise ValueError("Bitte gültige Zahl eingeben")
-    if year // 4 == True or year // 400 == True:
-        if year // 100 == True:
+    if year % 4 == 0 or year % 400 == 0:
+        if year % 100 == 0:
             return False
         else:
             return True
-    return False
+    else:
+        return False
+    
 
 
 if __name__ == "__main__":
